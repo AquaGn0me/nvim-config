@@ -10,4 +10,6 @@ vim.opt.termguicolors = true
 vim.opt.numberwidth = 4
 vim.opt.showmode = false
 
+vim.opt.shell = 'powershell.exe'
+
 vim.g.python3_host_prog = vim.fn.expand("%USERPROFILE%/.pyenv/pyenv-win/versions/3.12.0/python312.exe")

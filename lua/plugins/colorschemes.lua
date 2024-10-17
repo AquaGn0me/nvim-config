@@ -32,7 +32,7 @@ return {
         vim.g.gruvbox_italic = false -- Use italic font for certain highlights
 
       
-        vim.cmd.colorscheme("gruvbox")
+        -- vim.cmd.colorscheme("gruvbox")
     end,
     },
 
@@ -55,17 +55,32 @@ return {
         priority = 1000,
         config = function()
             require("tokyodark").setup({
-                    transparent_background = false, -- set background to transparent
-                    gamma = 1.00, -- adjust the brightness of the theme
-                    styles = {
-                        comments = { italic = false },
-                        keywords = { italic = false },
-                        identifiers = { italic = false },
-                        functions = {italic = false},
-                        variables = {italic = false},
-                    },
-                    terminal_colors = true
+                transparent_background = false, -- set background to transparent
+                gamma = 1.00, -- adjust the brightness of the theme
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                    identifiers = { italic = false },
+                    functions = {italic = false},
+                    variables = {italic = false},
+                },
+                terminal_colors = true
             })
+        end
+    },
+
+    {
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- Set global variables for the gruvbox-material theme.
+            vim.g.gruvbox_material_enable_italic = false
+            vim.g.gruvbox_material_background = 'hard'
+            vim.g.gruvbox_material_disable_italic_comment = 1
+    
+            -- Apply the colorscheme.
+            vim.cmd.colorscheme("gruvbox-material")
         end
     }
 }
